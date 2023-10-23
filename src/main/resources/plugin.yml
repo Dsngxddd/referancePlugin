@@ -1,0 +1,12 @@
+name: ReferansPlugin
+version: '1.1'
+main: org.cengiz1.referansplugin.ReferansPlugin
+api-version: '1.16'
+author: DSNG
+depend:
+  - PlaceholderAPI
+commands:
+  referansol:
+    description: Referans ol komutu
+  referanslarım:
+    description: Referans olanları gösterir

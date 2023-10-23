@@ -1,0 +1,9 @@
+## Ödülü buraya gir
+
+
+reward-command: "give <player> diamond 1"
+
+## 2 dk da bir otomatik verileri kaydedicektir.
+## Sunucuyu fazla yormaması adına 10dk tavsiye edilir.
+
+otomatik-kayit: 2
