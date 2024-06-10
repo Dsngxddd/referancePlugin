@@ -52,18 +52,17 @@ public class ReferansPlugin extends JavaPlugin implements CommandExecutor {
         closeDatabase();
         Bukkit.getLogger().info("[ReferansPlugin] Devre Dışı!");
     }
-    private boolean isFirstRun = true; // İlk çalışma için kontrol değişkeni
+    private boolean isFirstRun = true; 
 
     private void startDatabaseSaveTask() {
-        int saveIntervalTicks = saveIntervalMinutes * 1200; // Dakika cinsinden kaydetme aralığı
+        int saveIntervalTicks = saveIntervalMinutes * 1200; 
         new BukkitRunnable() {
             @Override
             public void run() {
-                saveReferredPlayers(); // Veritabanını kaydet
-
+                saveReferredPlayers();
                 if (isFirstRun) {
-                    Bukkit.getLogger().info(logColoredMessage("&7[&eReferansPlugin&7] veri tabanı aktif")); // Sadece ilk çalışmada mesajı yazdır
-                    isFirstRun = false; // İlk çalışma gerçekleşti, bir daha yazdırma
+                    Bukkit.getLogger().info(logColoredMessage("&7[&eReferansPlugin&7] veri tabanı aktif")); 
+                    isFirstRun = false;
                 }
             }
         }.runTaskTimerAsynchronously(this, 0, saveIntervalTicks);
@@ -141,11 +140,11 @@ public class ReferansPlugin extends JavaPlugin implements CommandExecutor {
             referredPlayers.put(referrer.getName(), referee.getName());
 
             if (!rewardCommand.isEmpty()) {
-                // Referrer'a ödül ver
+                
                 String referrerRewardCommand = rewardCommand.replace("<player>", referrer.getName());
                 getServer().dispatchCommand(getServer().getConsoleSender(), referrerRewardCommand);
 
-                // Referee'ye ödül ver
+                
                 String refereeRewardCommand = rewardCommand.replace("<player>", referee.getName());
                 getServer().dispatchCommand(getServer().getConsoleSender(), refereeRewardCommand);
             }
